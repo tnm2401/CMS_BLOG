@@ -15,6 +15,8 @@ class TaoBangGioiThieu extends Migration
     {
         Schema::create('cms_custom_about', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('content');
             $table->timestamps();
         });
     }

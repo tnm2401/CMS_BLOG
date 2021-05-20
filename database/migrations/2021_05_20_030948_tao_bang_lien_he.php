@@ -15,6 +15,9 @@ class TaoBangLienHe extends Migration
     {
         Schema::create('cms_customer_support', function (Blueprint $table) {
             $table->id();
+            $table->string('customer_email');
+            $table->string('customer_subject');
+            $table->string('customer_content');
             $table->timestamps();
         });
     }

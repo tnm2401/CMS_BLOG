@@ -15,6 +15,10 @@ class CreateCmsGroupPost extends Migration
     {
         Schema::create('cms_group_post', function (Blueprint $table) {
             $table->id();
+            $table->string('group_name');
+            $table->integer('group_special');
+            $table->string('group_slug');
+            $table->integer('group_display');
             $table->timestamps();
         });
     }
