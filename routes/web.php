@@ -13,4 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard', [App\Http\Controllers\BE_Controller\HomeController::class,'index']);
+Route::prefix('admin')->group(function () {
+    Route::get('/', [App\Http\Controllers\BE_Controller\HomeController::class,'index'])->name('admin.dasboard');
+});
+
+Route::get('/dang-ky', [App\Http\Controllers\Auth\AuthController::class,'register'])->name('auth.register');
+Route::get('/dang-nhap', [App\Http\Controllers\Auth\AuthController::class,'login'])->name('auth.login');
+Route::post('/create', [App\Http\Controllers\Auth\AuthController::class,'create'])->name('auth.create');
