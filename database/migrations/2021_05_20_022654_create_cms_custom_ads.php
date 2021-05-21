@@ -15,6 +15,11 @@ class CreateCmsCustomAds extends Migration
     {
         Schema::create('cms_custom_ads', function (Blueprint $table) {
             $table->id();
+            $table->integer('ads_serial');
+            $table->string('ads_title');
+            $table->string('ads_location');
+            $table->string('ads_image');
+            $table->integer('ads_display')->default(0);
             $table->timestamps();
         });
     }

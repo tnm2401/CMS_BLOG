@@ -4,18 +4,19 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCmsCounter extends Migration
+class TaoBangLogAdmin extends Migration
 {
     /**
      * Run the migrations.
+     *
      * @return void
      */
     public function up()
     {
-        Schema::create('cms_counter', function (Blueprint $table) {
-            $table->id();
-            $table->string('ip');
-            $table->date('time');
+        Schema::create('cms_log_admin', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('log_name')->nullable();
+            $table->integer('log_user');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateCmsCounter extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cms_counter');
+        Schema::dropIfExists('cms_log_admin');
     }
 }
