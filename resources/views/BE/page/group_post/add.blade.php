@@ -8,7 +8,6 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('BE')}}/dist/css/adminlte.min.css">
 @endsection
-@include('sweetalert::alert')
 
 @section('maincontent')
 <div class="content-wrapper">
@@ -92,7 +91,6 @@
 </div>
 @endsection
 @section('linkjs')
-
     <!-- jQuery -->
     <script src="{{asset('BE')}}/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->

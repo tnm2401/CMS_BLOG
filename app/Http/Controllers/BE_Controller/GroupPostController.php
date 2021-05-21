@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\BE_Controller;
-use RealRashid\SweetAlert\Facades\Alert;
+// Use Alert;
+// use RealRashid\SweetAlert\Facades\Alert;
+// use RealRashid\SweetAlert\Facades\Aler;
+
 use App\Models\GroupPost;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -47,7 +50,7 @@ class GroupPostController extends Controller
         ]);
         toast('Your Post as been submited!','success','top-right');
         $gp->save();
-        return redirect ()->back();
+        return redirect ()->back()->with('success', 'Thành công');
 
     }
 

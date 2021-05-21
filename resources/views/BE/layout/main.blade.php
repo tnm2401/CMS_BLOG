@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('pagetitle')</title>
-
+  {{-- này là css dộng --}}
   @yield('linkcss')
 
 </head>
@@ -33,8 +33,11 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+    {{-- link js động  --}}
     @yield('linkjs')
-    
+
+    {{-- Phần này để link js cứng --}}
+    {{-- <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script> --}}
+
 </body>
 </html>
