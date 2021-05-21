@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class,'index']);
+Route::get('/dashboard', [App\Http\Controllers\BE_Controller\HomeController::class,'index']);
