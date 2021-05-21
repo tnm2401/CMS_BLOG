@@ -4,18 +4,18 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCmsCounter extends Migration
+class TaoBangTags extends Migration
 {
     /**
      * Run the migrations.
+     *
      * @return void
      */
     public function up()
     {
-        Schema::create('cms_counter', function (Blueprint $table) {
+        Schema::create('cms_tags', function (Blueprint $table) {
             $table->id();
-            $table->string('ip');
-            $table->date('time');
+            $table->string('tag_name');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateCmsCounter extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cms_counter');
+        Schema::dropIfExists('cms_tags');
     }
 }

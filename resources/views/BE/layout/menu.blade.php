@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="" class="brand-link">
       <div class="logo-mtn">
-        <img  src="{{asset('BE')}}/dist/img/logo.png" alt="Logo MTN">
+        <img  src="{{asset('BE')}}/dist/img/6.gif" alt="Logo MTN">
       </div>
       {{-- <span class="brand-text font-weight-light">CMS NMT</span> --}}
     </a>

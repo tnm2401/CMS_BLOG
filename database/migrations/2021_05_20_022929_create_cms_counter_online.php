@@ -15,6 +15,7 @@ class CreateCmsCounterOnline extends Migration
     {
         Schema::create('cms_counter_online', function (Blueprint $table) {
             $table->id();
+            $table->string('session_id');
             $table->timestamps();
         });
     }

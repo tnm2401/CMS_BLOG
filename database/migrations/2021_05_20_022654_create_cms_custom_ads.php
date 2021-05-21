@@ -19,7 +19,7 @@ class CreateCmsCustomAds extends Migration
             $table->string('ads_title');
             $table->string('ads_location');
             $table->string('ads_image');
-            $table->integer('ads_display');
+            $table->integer('ads_display')->default(0);
             $table->timestamps();
         });
     }

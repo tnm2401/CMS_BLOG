@@ -16,18 +16,18 @@
 
 @section('maincontent')
 <div class="register-box">
-    <div class="register-logo">
-      <a href="{{ asset('BE') }}/index2.html"><b>Admin</b>LTE</a>
-    </div>
+  <div class="register-logo">
+    <a href="admin"><img src="{{asset('BE')}}/dist/img/6.gif" alt=""></a>
+  </div>
   
     <div class="card">
       <div class="card-body register-card-body">
-        <p class="login-box-msg">Register a new membership</p>
+        <p class="login-box-msg">ĐĂNG KÝ</p>
   
         <form id="register_form" action="{{ route('auth.create') }}" method="post">
             @csrf
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Full name" name="name">
+            <input type="text" class="form-control" placeholder="Tên" name="name">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
@@ -45,7 +45,7 @@
         </div>
         @error('email'){{ $message }}@enderror
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password" name="password">
+            <input type="password" class="form-control" placeholder="Mật khẩu" name="password">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -54,7 +54,7 @@
         </div>
         @error('password'){{ $message }}@enderror
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Retype password" name="password_confirmation">
+            <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" name="password_confirmation">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -62,37 +62,32 @@
             </div>
         </div>
         @error('re_password'){{ $message }}@enderror
-          <div class="row">
-            <div class="col-8">
-              <div class="icheck-primary">
+              <div class="icheck-primary pb-2">
                 <input type="checkbox" id="agreeTerms" name="checkbox_policy">
                 <label for="agreeTerms">
-                 I agree to the <a href="#">terms</a>
+                 Đồng ý với các <a href="#">điểu khoản</a>
                 </label>
-                @error('checkbox_policy'){{ $message }}@enderror
               </div>
-            </div>
+                @error('checkbox_policy'){{ $message }}@enderror
             <!-- /.col -->
-            <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block">Register</button>
-            </div>
+              <button type="submit" class="btn btn-primary btn-block">Đăng ký</button>
             <!-- /.col -->
-          </div>
+          
         </form>
   
         <div class="social-auth-links text-center">
-          <p>- OR -</p>
+          <p>- Hoặc -</p>
           <a href="#" class="btn btn-block btn-primary">
             <i class="fab fa-facebook mr-2"></i>
-            Sign up using Facebook
+            Đăng nhập với Facebook
           </a>
           <a href="#" class="btn btn-block btn-danger">
             <i class="fab fa-google-plus mr-2"></i>
-            Sign up using Google+
+            Đăng nhập với Google+
           </a>
         </div>
   
-        <a href="login.html" class="text-center">I already have a membership</a>
+        Đã có tài khoản <a href="dang-nhap" class="text-center">Đăng nhập</a>
       </div>
       <!-- /.form-box -->
     </div><!-- /.card -->

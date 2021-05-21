@@ -15,6 +15,16 @@ class TaoBangTinVideo extends Migration
     {
         Schema::create('cms_videos', function (Blueprint $table) {
             $table->id();
+            $table->string('video_name');
+            $table->string('video_description');
+            $table->string('video_slug')->nullable()->unique();
+            $table->integer('video_group');
+            $table->integer('video_view');
+            $table->integer('video_special')->default(0);
+            $table->integer('video_display')->default(1);
+            $table->integer('user_id');
+            $table->string('video_image');
+            $table->integer('video_tag');
             $table->timestamps();
         });
     }

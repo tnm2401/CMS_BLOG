@@ -17,9 +17,9 @@ class CreateCmsTypePost extends Migration
             $table->id();
             $table->string('type_name');
             $table->integer('type_group');
-            $table->string('type_slug');
-            $table->integer('type_special');
-            $table->integer('type_display');
+            $table->string('type_slug')->nullable()->unique();
+            $table->integer('type_special')->default(0);
+            $table->integer('type_display')->default(1);
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ class CreateCmsSeo extends Migration
     {
         Schema::create('cms_seo', function (Blueprint $table) {
             $table->id();
+            $table->string('meta_name');
+            $table->string('meta_content');
             $table->timestamps();
         });
     }
