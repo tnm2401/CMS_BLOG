@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::prefix('admin')->group(function () {
     Route::get('/', [App\Http\Controllers\BE_Controller\HomeController::class,'index'])->name('admin.dasboard');
     Route::resource('nhom-tin', App\Http\Controllers\BE_Controller\GroupPostController::class);

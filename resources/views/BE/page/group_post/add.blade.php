@@ -8,6 +8,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('BE')}}/dist/css/adminlte.min.css">
 @endsection
+@include('sweetalert::alert')
 
 @section('maincontent')
 <div class="content-wrapper">
@@ -41,7 +42,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form method="POST" action="{{route('nhom-tin.store')}}">
+                @csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tên nhóm</label>
@@ -59,11 +61,17 @@
                     <div class="input-group">
                       <div class="custom-file">
                         <label for="exampleInputFile">Hiển thị</label>
-                        <select name="group_special" id="">
+                        <select name="group_display" id="">
                           <option value="0">Ẩn</option>
                           <option value="1">Hiện</option>
                         </select>
                       </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputFile">STT</label>
+                    <div class="input-group">
+                      <input class="form-control" name="group_serial" type="text" >
                     </div>
                   </div>
                 </div>
@@ -84,7 +92,7 @@
 </div>
 @endsection
 @section('linkjs')
-    
+
     <!-- jQuery -->
     <script src="{{asset('BE')}}/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->

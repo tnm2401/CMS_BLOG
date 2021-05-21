@@ -8,6 +8,7 @@ class GroupPost extends Model
     protected $table = 'cms_group_post';
     protected $primaryKey = 'id';
     protected $fillable = [
+        'group_serial',
         'group_name',
         'group_slug',
         'group_special',

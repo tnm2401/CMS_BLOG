@@ -8,6 +8,7 @@
   @yield('linkcss')
 
 </head>
+
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
@@ -15,6 +16,7 @@
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="{{ asset('BE')}}/dist/img/6.gif" alt="loading" height="256" width="256">
   </div>
+  @include('sweetalert::alert')
 
   @include('BE.layout.header')
 
@@ -33,5 +35,6 @@
 <!-- ./wrapper -->
 
     @yield('linkjs')
+    
 </body>
 </html>

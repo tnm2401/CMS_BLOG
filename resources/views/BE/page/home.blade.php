@@ -23,9 +23,13 @@
     <link rel="stylesheet" href="{{asset('BE')}}/plugins/summernote/summernote-bs4.min.css">
     <!-- Style -->
     <link rel="stylesheet" href="{{asset('BE')}}/dist/css/style.css">
+  
+
 @endsection
 
 @section('maincontent')
+@include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -634,6 +638,9 @@
 @endsection
 
 @section('linkjs')
+{{-- sweetalert2.all.js --}}
+
+
     <!-- jQuery -->
     <script src="{{asset('BE')}}/plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->

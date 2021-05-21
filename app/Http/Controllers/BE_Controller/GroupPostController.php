@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\BE_Controller;
-
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\GroupPost;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -40,13 +40,15 @@ class GroupPostController extends Controller
     {
         $gp = new GroupPost([
             'group_name' => $request->get('group_name'),
+            'group_serial' => $request->get('group_serial'),
             'group_slug' => \Str::slug($request->group_name),
             'group_special' => $request->get('group_special'),
             'group_display' => $request->get('group_display')
         ]);
-
+        toast('Your Post as been submited!','success','top-right');
         $gp->save();
-        return redirect()->route('group.show');
+        return redirect ()->back();
+
     }
 
     /**
