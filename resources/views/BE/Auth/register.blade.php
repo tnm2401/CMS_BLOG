@@ -22,7 +22,7 @@
   
     <div class="card">
       <div class="card-body register-card-body">
-        <p class="login-box-msg">ĐĂNG KÝ</p>
+        <p class="login-box-msg">Đăng ký</p>
   
         <form id="register_form" action="{{ route('auth.create') }}" method="post">
             @csrf
