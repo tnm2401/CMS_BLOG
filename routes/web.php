@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function () {
     Route::get('/', [App\Http\Controllers\BE_Controller\HomeController::class,'index'])->name('admin.dasboard');
+    Route::resource('nhom-tin', App\Http\Controllers\BE_Controller\GroupPostController::class);
 });
 
 Route::get('/dang-ky', [App\Http\Controllers\Auth\AuthController::class,'register'])->name('auth.register');
