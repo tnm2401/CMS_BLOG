@@ -1,4 +1,4 @@
-@extends('BE.layout.mainauth')
+@extends('BE.Auth.mainauth')
 
 @section('pagetitle', 'Đăng kí')
 

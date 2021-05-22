@@ -1,14 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\BE_Controller;
-// Use Alert;
-// use RealRashid\SweetAlert\Facades\Alert;
-// use RealRashid\SweetAlert\Facades\Aler;
-
 use App\Models\GroupPost;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
 
 class GroupPostController extends Controller
 {
@@ -48,9 +43,9 @@ class GroupPostController extends Controller
             'group_special' => $request->get('group_special'),
             'group_display' => $request->get('group_display')
         ]);
-        toast('Your Post as been submited!','success','top-right');
+        toast('Đã thêm thành công!','success','top-right');
         $gp->save();
-        return redirect ()->back()->with('success', 'Thành công');
+        return redirect()->back();
 
     }
 
@@ -88,12 +83,14 @@ class GroupPostController extends Controller
     {
         $gp = GroupPost::find($id);
         $gp->group_slug =\Str::slug($request->group_name);
+        $gp->group_serial = $request->get('group_serial');
         $gp->group_name = $request->get('group_name');
         $gp->group_special = $request->get('group_special');
         $gp->group_display = $request->get('group_display');
-
+        
+        toast('Thao tác thành công!','success','top-right');
         $gp->save();
-        return redirect()->route('group.edit');
+        return redirect()->route('nhom-tin.index');
     }
 
     /**
@@ -107,7 +104,7 @@ class GroupPostController extends Controller
         $gp = GroupPost::find($id);
         if($gp->check_type()->get()->toArray()==null){
             $gp->delete();
-            return redirect()->route('group.show');
+            return redirect()->route('nhom-tin.index');
         }
         else{
             return redirect()->back();
